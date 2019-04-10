@@ -42,8 +42,27 @@ function main() {
     canvasElement.setAttribute('width', width);
     canvasElement.setAttribute('height', height);
 
+    
     const game = new Game(canvasElement);
     game.startLoop();
+
+    document.addEventListener('keydown', function(event) {
+      
+      
+      if (event.keyCode === 38 ) {
+        game.player.setDirection(-1)
+
+      } else if (event.keyCode === 40) {
+        game.player.setDirection(1)
+      }
+
+      document.addEventListener('keyup', function(event){
+          if (event.keycode === 38 || event.keyCode === 40) {
+            game.player.setDirection(0);
+          }
+
+      })
+    })
 
     setTimeout(buildGameOverScreen, 3000);
   }

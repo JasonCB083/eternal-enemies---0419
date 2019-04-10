@@ -10,11 +10,14 @@ function Game(canvas) {
 
 Game.prototype.startLoop = function() {
 
+  this.player = new Player(this.canvas);
+
   const loop = () => {
     console.log('im in the loop');
     this.clearCanvas();
     this.updateCanvas();
     this.drawCanvas();
+    console.log(this.player.direction);
     
 
     window.requestAnimationFrame(loop);
@@ -26,9 +29,10 @@ Game.prototype.clearCanvas = function() {
   this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 }
 Game.prototype.updateCanvas = function() {
+  this.player.update();
 
 }
 Game.prototype.drawCanvas = function() {
-
+  this.player.draw();
 }
 
