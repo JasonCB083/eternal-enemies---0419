@@ -98,3 +98,9 @@ section.testimonials .button {
 
 /* boiler plate above */
 /*/////////////////////////////////////////////////////////////*/
+
+
+.game-container {
+  width: 100%;
+  height: 90vh;
+}
